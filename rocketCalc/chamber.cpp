@@ -9,6 +9,16 @@ int main(int argc , char  *argv[]) {
   //psi
   double ChamberPressure = strtod(argv[2],NULL);
   
+  std::cout << "convergentChamberAngle() :" << convergentChamberAngle()  << "\n";
+  std::cout << "divergentChamberAngle() :" << divergentChamberAngle()  << "\n";
+  std::cout << "nozzleThroatCrossArea() :" << nozzleThroatCrossArea()  << "\n";
+  std::cout << "nozzleThroatDiameter() :" << nozzleThroatDiameter()  << "\n";
+  std::cout << "chamberCrossArea()  :" << chamberCrossArea()   << "\n";
+  std::cout << "chamberDiameter() :" << chamberDiameter()  << "\n";
+  std::cout << "nozzleTemperature() :" << nozzleTemperature()  << "\n";
+  std::cout << "chamberTemperature() :" << chamberTemperature()  << "\n";
+  std::cout << "gamma() :" << gamma()  << "\n";
+  
   return 0;
 
 }
