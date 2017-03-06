@@ -18,16 +18,21 @@ double divergentChamberAngle() {
   return 15.0;
 }
 
-//from cdiameter.h
 double nozzleThroatCrossArea() {
-  return getNozzleArea();
+  return chamberCrossArea()/3;
 }
 
-//from cdiameter.h
 double nozzleThroatDiameter() {
-  return getNozzleDiameter();
+  return pow(4*nozzleThroatCrossArea()/3.14159,0.5);
 }
 
+double chamberCrossArea() {
+  return pow(ChamberDiameter/2,2)*3.1459;
+}
+
+double chamberDiameter() {
+  return ChamberDiameter;  
+}
 
 //uses gamma and chamber temperature
 double nozzleTemperature() {
