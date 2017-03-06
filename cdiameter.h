@@ -1,11 +1,5 @@
 #include <cmath>
 
-
-
-class Dimensions {
- 
-
- public:
   double ChamberDiameter;
   void setChamberDiameter(double);
   double getChamberArea();
@@ -13,5 +7,5 @@ class Dimensions {
   double getNozzleDiameter();
   double getChamberDiameter();
 
-};
+
 
