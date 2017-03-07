@@ -27,7 +27,10 @@ double nozzleTemperature();
 // returns the pressure of the exhaust at the nozzle in units of Pascals
 double nozzlePressure();
 
-// returns the temperature of the chamber of the nozzle 
+// returns the pressure of the exhaust at the chamber in units of Pascals
+double chamberPressure();
+
+// returns the temperature of the chamber of the nozzle in units of Kelvin
 double chamberTemperature();
 
 // returns the specific heat ratio of products

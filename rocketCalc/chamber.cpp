@@ -1,5 +1,6 @@
+#include "chamber.h"
 #include <iostream>
-#include <stdlib>
+#include <stdlib.h>
 #include <cmath>
 
 double ChamberDiameter, ChamberPressure; 
@@ -11,15 +12,17 @@ int main(int argc , char  *argv[]) {
   //psi
   ChamberPressure = strtod(argv[2],NULL);
   
-  std::cout << "convergentChamberAngle() :" << convergentChamberAngle()  << "\n";
-  std::cout << "divergentChamberAngle() :" << divergentChamberAngle()  << "\n";
-  std::cout << "nozzleThroatCrossArea() :" << nozzleThroatCrossArea()  << "\n";
-  std::cout << "nozzleThroatDiameter() :" << nozzleThroatDiameter()  << "\n";
-  std::cout << "chamberCrossArea()  :" << chamberCrossArea()   << "\n";
-  std::cout << "chamberDiameter() :" << chamberDiameter()  << "\n";
-  std::cout << "nozzleTemperature() :" << nozzleTemperature()  << "\n";
-  std::cout << "chamberTemperature() :" << chamberTemperature()  << "\n";
-  std::cout << "gamma() :" << gamma()  << "\n";
+  std::cout << "convergentChamberAngle(deg):" << convergentChamberAngle()  << "\n";
+  std::cout << "divergentChamberAngle(deg):" << divergentChamberAngle()  << "\n";
+  std::cout << "nozzleThroatCrossArea(m^2):" << nozzleThroatCrossArea()  << "\n";
+  std::cout << "nozzleThroatDiameter(m):" << nozzleThroatDiameter()  << "\n";
+  std::cout << "chamberCrossArea(m^2):" << chamberCrossArea()   << "\n";
+  std::cout << "chamberDiameter(m):" << chamberDiameter()  << "\n";
+  std::cout << "nozzleTemperature(K):" << nozzleTemperature()  << "\n";
+  std::cout << "nozzlePressure(Pa):" << nozzlePressure() << "\n";
+  std::cout << "chamberPressure(Pa):" << chamberPressure() << "\n";
+  std::cout << "chamberTemperature(K)" << chamberTemperature()<< "\n";
+  std::cout << "gamma:" << gamma()  << "\n";
   
   return 0;
 
@@ -50,7 +53,7 @@ double chamberCrossArea() {
 
 double chamberDiameter() {
   return ChamberDiameter;  
-}
+} 
 
 //uses gamma and chamber temperature
 double nozzleTemperature() {
@@ -61,6 +64,10 @@ double nozzleTemperature() {
 double nozzlePressure() {
   return 6894.75729*(ChamberPressure*pow((1 + (gamma() - 1) / 2 ), -1 * gamma()/(gamma()-1)));
 }
+
+double chamberPressure() { 
+  return 6894.75729*ChamberPressure;
+} 
 
 double chamberTemperature() {
   return 2.321*pow(10,-8)*pow(ChamberPressure,3) - 1.955*pow(10,-4)*pow(ChamberPressure,2) + 0.575*ChamberPressure + 3027.817;
