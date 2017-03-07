@@ -2,12 +2,14 @@
 #include <stdlib>
 #include <cmath>
 
+double ChamberDiameter, ChamberPressure; 
+
 int main(int argc , char  *argv[]) {
 
   //meters
-  double ChamberDiameter = strtod(argv[1],NULL);
+  ChamberDiameter = strtod(argv[1],NULL);
   //psi
-  double ChamberPressure = strtod(argv[2],NULL);
+  ChamberPressure = strtod(argv[2],NULL);
   
   std::cout << "convergentChamberAngle() :" << convergentChamberAngle()  << "\n";
   std::cout << "divergentChamberAngle() :" << divergentChamberAngle()  << "\n";
