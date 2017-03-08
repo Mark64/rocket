@@ -34,17 +34,17 @@ double exitMach() {
 
 // returns the velocity of the exiting gas in units of meters/second
 double exitGasVelocity() {
-  return 0;
+  return exitMach()*3;
 }
 
 // returns the mean temperature for the exiting exhaust in degrees kelvin
 double exitGasTemperature() {
-  return 0;
+  return pow(exitGasVelocity(),2)*propellentMolecularWeight()/(3*8.3144621) ;
 }
 
 // returns the pressure at the exit in Pascals
 double exitPressure() {
-  return 0;
+  return 101325;
 }
 
 // returns the ratio between exit cross-sectional area and nozzle throat cross-sectional area
