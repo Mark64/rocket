@@ -19,8 +19,11 @@ double oxidizerVolumeFlow();
 // returns the flow of total propellent (oxidizer + fuel) in units of kilograms/second
 double propellentMassFlow();
 
+// returns the flow of total propellent in units of lb/second
+double propellentWeightFlow();
+
 // returns the flow of total propellent (oxidizer + fuel) in units of liters/second
 double propellentVolumeFlow();
 
-
-
+// returns the average molecular weight of propellent in units of g per
+double propellentMolecularWeight();
