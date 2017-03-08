@@ -3,6 +3,8 @@
 
 #include<iostream>
 
+// outputs every variable
+void exitCall();
 
 // returns the area of the exit space for the thruster exhaust in units of meters^2
 double exitArea();

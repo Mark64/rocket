@@ -1,7 +1,9 @@
 #include <iostream>
 #include "chamber.h"
 #include "parameters.h"
-#inclde <cmath>
+#include "propellentFlow.h"
+#include "exit.h"
+#include <cmath>
 using namespace std;
 
 void exitCall() {
@@ -9,7 +11,7 @@ void exitCall() {
   cout << "Exit Diameter (m):" << exitDiameter() << "\n";
   cout << "Exit Mach :" << exitMach() << "\n";
   cout << "Exit Gas Velocity (m/s):" << exitGasVelocity() << "\n";
-  cout << "Exit Gas Temperature (K):" << exitGasTemperature() << "\n";
+  cout << fixed << "Exit Gas Temperature (K):" << exitGasTemperature() << "\n";
   cout << "Exit Pressure  (Pa):" << exitPressure() << "\n";
   cout << "Expansion Ratio:" << expansionRatio() << "\n\n";
  }
@@ -34,12 +36,12 @@ double exitMach() {
 
 // returns the velocity of the exiting gas in units of meters/second
 double exitGasVelocity() {
-  return exitMach()*3;
+  return exitMach()*343.29;
 }
 
 // returns the mean temperature for the exiting exhaust in degrees kelvin
 double exitGasTemperature() {
-  return pow(exitGasVelocity(),2)*propellentMolecularWeight()/(3*8.3144621) ;
+  return pow(exitGasVelocity(),2)*propellentMolecularWeight()/(3*8.3144621*1000) ;
 }
 
 // returns the pressure at the exit in Pascals
@@ -49,7 +51,7 @@ double exitPressure() {
 
 // returns the ratio between exit cross-sectional area and nozzle throat cross-sectional area
 double expansionRatio() {
-  return exitArea()/nozzleThroatArea();
+  return exitArea()/nozzleThroatCrossArea();
 }
 
  

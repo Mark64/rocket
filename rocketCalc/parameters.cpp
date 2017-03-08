@@ -3,7 +3,8 @@
 #include <stdlib.h>
 #include "propellentFlow.h"
 #include "chamber.h"
-
+#include "exit.h"
+using namespace std;
 double ChamberDiameter, ChamberPressure;
 
 int main(int argc, char *argv[]) {
@@ -13,8 +14,11 @@ int main(int argc, char *argv[]) {
 
   chamberCall();
   
-  std::cout << "\n";
+  cout << "\n";
 
   propellentFlowCall();
-  
+
+  cout << "\n";
+
+  exitCall();
 }
