@@ -11,10 +11,10 @@ int main(int argc, char *argv[]) {
   ChamberDiameter = strtod(argv[1],NULL);
   ChamberPressure = strtod(argv[2],NULL);
 
-  propellentFlowCall();
-  
-  std::cout << "\n\n";
-
   chamberCall();
+  
+  std::cout << "\n";
+
+  propellentFlowCall();
   
 }

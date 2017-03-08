@@ -17,7 +17,11 @@ void chamberCall() {
   std::cout << "chamberCrossArea(m^2):" << chamberCrossArea()   << "\n";
   std::cout << "chamberDiameter(m):" << chamberDiameter()  << "\n";
   std::cout << "chamberPressure(Pa):" << chamberPressure() << "\n";
-  std::cout << "chamberTemperature(K)" << chamberTemperature()<< "\n\n";
+  std::cout << "chamberTemperature(K):" << chamberTemperature()<< "\n";
+  std::cout << "chamberVolume(m^3):" << chamberVolume() << "\n";
+  std::cout << "chamberVolume(L):" << chamberVolumeL() << "\n";
+  std::cout << "chamberThickness(m):" << chamberThickness() << "\n";
+  std::cout << "chamberLength(m):" << chamberLength() << "\n\n";
   std::cout << "nozzleThroatCrossArea(m^2):" << nozzleThroatCrossArea()  << "\n";
   std::cout << "nozzleThroatDiameter(m):" << nozzleThroatDiameter()  << "\n";
   std::cout << "nozzleTemperature(K):" << nozzleTemperature()  << "\n";
@@ -52,14 +56,29 @@ double chamberCrossArea() {
 
 double chamberDiameter() {
   return ChamberDiameter;  
-} 
+}
 
-//uses gamma and chamber temperature
+double chamberVolume() {
+  return 0.89*nozzleThroatCrossArea();
+}
+
+double chamberVolumeL() {
+  return chamberVolume()*1000;
+}
+
+double chamberThickness() {
+  return ((ChamberPressure*ChamberDiameter*37.37)/1600)*0.0254;
+}
+
+double chamberLength() {
+  return chamberVolume()/(1.1*chamberCrossArea());
+}
+
 double nozzleTemperature() {
   return chamberTemperature()*( 1 / ( 1 + ( gamma() - 1) / 2 ) );
 }
 
-//ChamberPressure input is in psi, converted to pascals
+
 double nozzlePressure() {
   return 6894.75729*(ChamberPressure*pow((1 + (gamma() - 1) / 2 ), -1 * gamma()/(gamma()-1)));
 }

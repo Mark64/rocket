@@ -33,8 +33,20 @@ double nozzlePressure();
 // returns the pressure of the exhaust at the chamber in units of Pascals
 double chamberPressure();
 
-// returns the temperature of the chamber of the nozzle in units of Kelvin
+// returns the temperature of the chamber in units of Kelvin
 double chamberTemperature();
+
+// returns the volume of the chamber (not including convergent) in units of meters^3
+double chamberVolume();
+
+// returns the volume of the chamber (not including convergent) in units of Liters
+double chamberVolumeL();
+
+// returns the thickness of the chamber in units of meters
+double chamberThickness();
+
+// returns the length of the chamber in units of meters
+double chamberLength();
 
 // returns the specific heat ratio of products
 double gamma();
