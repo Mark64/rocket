@@ -40,7 +40,7 @@ double fuelMassFlow() {
 }
 
 double fuelWeightFlow() {
-  return 0.0;
+  return propellentWeightFlow()/(mixtureRatio()+1);
 }
 
 double fuelVolumeFlow() {
@@ -52,7 +52,7 @@ double oxidizerMassFlow() {
 }
 
 double oxidizerWeightFlow() {
-  return 0.0; 
+  return propellentWeightFlow()*mixtureRatio()/(mixtureRatio()); 
 }
 
 double oxidizerVolumeFlow() {
