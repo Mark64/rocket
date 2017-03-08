@@ -48,6 +48,9 @@ double chamberThickness();
 // returns the length of the chamber in units of meters
 double chamberLength();
 
+// returns the ratio of the chamber cross-sectional area to the nozzle throat crosss sectional area 
+double contractionRatio();
+
 // returns the specific heat ratio of products
 double gamma();
 

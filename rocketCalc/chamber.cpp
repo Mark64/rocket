@@ -3,31 +3,33 @@
 #include <iostream>
 #include <stdlib.h>
 #include <cmath>
+using namespace std;
 
-//double ChamberDiameter = 0.09;
-//double ChamberPressure = 440;
 
 void chamberCall() {
 
   
-  std::cout << "gamma:" << gamma()  << "\n";
-  std::cout << "ratio:" << mixtureRatio() << "\n\n";
-  std::cout << "convergentChamberAngle(deg):" << convergentChamberAngle()  << "\n";
-  std::cout << "divergentChamberAngle(deg):" << divergentChamberAngle()  << "\n\n";
-  std::cout << "chamberCrossArea(m^2):" << chamberCrossArea()   << "\n";
-  std::cout << "chamberDiameter(m):" << chamberDiameter()  << "\n";
-  std::cout << "chamberPressure(Pa):" << chamberPressure() << "\n";
-  std::cout << "chamberTemperature(K):" << chamberTemperature()<< "\n";
-  std::cout << "chamberVolume(m^3):" << chamberVolume() << "\n";
-  std::cout << "chamberVolume(L):" << chamberVolumeL() << "\n";
-  std::cout << "chamberThickness(m):" << chamberThickness() << "\n";
-  std::cout << "chamberLength(m):" << chamberLength() << "\n\n";
-  std::cout << "nozzleThroatCrossArea(m^2):" << nozzleThroatCrossArea()  << "\n";
-  std::cout << "nozzleThroatDiameter(m):" << nozzleThroatDiameter()  << "\n";
-  std::cout << "nozzleTemperature(K):" << nozzleTemperature()  << "\n";
-  std::cout << "nozzlePressure(Pa):" << nozzlePressure() << "\n\n";
-
+  cout << "gamma:" << gamma()  << "\n";
+  cout << "ratio:" << mixtureRatio() << "\n\n";
   
+  cout << "convergentChamberAngle(deg):" << convergentChamberAngle()  << "\n";
+  cout << "divergentChamberAngle(deg):" << divergentChamberAngle()  << "\n\n";
+  
+  cout << "chamberCrossArea(m^2):" << chamberCrossArea()   << "\n";
+  cout << "chamberDiameter(m):" << chamberDiameter()  << "\n";
+  cout << "chamberPressure(Pa):" << chamberPressure() << "\n";
+  cout << "chamberTemperature(K):" << chamberTemperature()<< "\n";
+  cout << "chamberVolume(m^3):" << chamberVolume() << "\n";
+  cout << "chamberVolume(L):" << chamberVolumeL() << "\n";
+  cout << "chamberThickness(m):" << chamberThickness() << "\n";
+  cout << "chamberLength(m):" << chamberLength() << "\n";
+  cout << "Contraction Ratio:" << contractionRatio() << "\n\n";
+
+  cout << "nozzleThroatCrossArea(m^2):" << nozzleThroatCrossArea()  << "\n";
+  cout << "nozzleThroatDiameter(m):" << nozzleThroatDiameter()  << "\n";
+  cout << "nozzleTemperature(K):" << nozzleTemperature()  << "\n";
+  cout << "nozzlePressure(Pa):" << nozzlePressure() << "\n\n";
+
 
   }
 
@@ -72,6 +74,10 @@ double chamberThickness() {
 
 double chamberLength() {
   return chamberVolume()/(1.1*chamberCrossArea());
+}
+
+double contractionRatio() {
+  return chamberCrossArea()/nozzleThroatCrossArea();
 }
 
 double nozzleTemperature() {

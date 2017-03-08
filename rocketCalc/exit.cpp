@@ -19,8 +19,7 @@ void exitCall() {
 
 // returns the area of the exit space for the thruster exhaust in units of meters^2
 double exitArea() {
-  return ( nozzleThroatCrossArea() / exitMach() ) * pow ( ( 1 + (gamma() - 1)/ 2 ) 
-  * pow (exitMach(),2)/((gamma() + 1)/2), (gamma() + 1)/( 2 * ( gamma() - 1 )));
+  return (nozzleThroatCrossArea()/exitMach() ) * pow ( (1+exitMach()*exitMach()*(gamma()-1)/2)/((gamma()+1)/2), (gamma()+1)/(2*gamma()-2));
 }
 
 // returns the diameter of the exit in units of meters

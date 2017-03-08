@@ -12,6 +12,8 @@ int main(int argc, char *argv[]) {
   ChamberDiameter = strtod(argv[1],NULL);
   ChamberPressure = strtod(argv[2],NULL);
 
+  cout << "\n";
+
   chamberCall();
   
   cout << "\n";
