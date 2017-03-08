@@ -3,6 +3,8 @@
 
 #include<iostream>
 
+void propellentFlowCall();
+
 
 // returns the flow of fuel in units of kilograms/second
 double fuelMassFlow();

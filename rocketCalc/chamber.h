@@ -3,6 +3,9 @@
 
 #include<iostream>
 
+//Output all variables
+void chamberCall();
+
 // returns the angle of the convergent section of the chamber in units of degrees
 double convergentChamberAngle();
 
@@ -36,4 +39,8 @@ double chamberTemperature();
 // returns the specific heat ratio of products
 double gamma();
 
+// returns the optimal ratio of oxidizer to fuel
+double mixtureRatio();
 
+// user parameters for chamber diameter and pressure
+//extern double ChamberDiameter, ChamberPressure;

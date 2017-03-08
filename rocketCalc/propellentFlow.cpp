@@ -2,16 +2,19 @@
 #include <iostream>
 #include <cmath>
 #include <stdlib.h>
+#include "parameters.h"
 #include "chamber.h"
 using namespace std;
 
 
-int main(int argc, char *argv[]){
+
+void propellentFlowCall(){
 
   //meters
-  ChamberDiameter = strtod(argv[1],NULL);
+  //ChamberDiameter = strtod(argv[1],NULL);
   //psi
-  ChamberPressure = strtod(argv[2],NULL);
+  //ChamberPressure = strtod(argv[2],NULL);
+
 
   cout << "Fuel Mass Flow (kg per s):" << fuelMassFlow() << "\n";
 
@@ -25,9 +28,10 @@ int main(int argc, char *argv[]){
 
   cout << "Propellent Weight Flow (lb per s):" << propellentWeightFlow() << "\n";
 
-  //call all this in other file   
+  cout << "Propellent Molecular Weight (g per mole):" << propellentMolecularWeight() << "\n";
 
-  return 0;
+
+  //call all this in other file   
 
 }
 
@@ -60,7 +64,7 @@ double propellentMassFlow() {
 }
 
 double propellentWeightFlow() {
-  return 0.0;
+  return (nozzleThroatCrossArea()*1550)*(nozzlePressure()*0.000145038)/pow((65*(nozzleTemperature()*1.8/(32.2*gamma()))),0.5);
 }
 
 double propellentVolumeFlow() {
