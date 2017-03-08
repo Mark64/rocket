@@ -9,18 +9,20 @@
 
 void chamberCall() {
 
+  
+  std::cout << "gamma:" << gamma()  << "\n";
+  std::cout << "ratio:" << mixtureRatio() << "\n\n";
   std::cout << "convergentChamberAngle(deg):" << convergentChamberAngle()  << "\n";
-  std::cout << "divergentChamberAngle(deg):" << divergentChamberAngle()  << "\n";
-  std::cout << "nozzleThroatCrossArea(m^2):" << nozzleThroatCrossArea()  << "\n";
-  std::cout << "nozzleThroatDiameter(m):" << nozzleThroatDiameter()  << "\n";
+  std::cout << "divergentChamberAngle(deg):" << divergentChamberAngle()  << "\n\n";
   std::cout << "chamberCrossArea(m^2):" << chamberCrossArea()   << "\n";
   std::cout << "chamberDiameter(m):" << chamberDiameter()  << "\n";
-  std::cout << "nozzleTemperature(K):" << nozzleTemperature()  << "\n";
-  std::cout << "nozzlePressure(Pa):" << nozzlePressure() << "\n";
   std::cout << "chamberPressure(Pa):" << chamberPressure() << "\n";
-  std::cout << "chamberTemperature(K)" << chamberTemperature()<< "\n";
-  std::cout << "gamma:" << gamma()  << "\n";
-  std::cout << "ratio:" << mixtureRatio() << "\n";
+  std::cout << "chamberTemperature(K)" << chamberTemperature()<< "\n\n";
+  std::cout << "nozzleThroatCrossArea(m^2):" << nozzleThroatCrossArea()  << "\n";
+  std::cout << "nozzleThroatDiameter(m):" << nozzleThroatDiameter()  << "\n";
+  std::cout << "nozzleTemperature(K):" << nozzleTemperature()  << "\n";
+  std::cout << "nozzlePressure(Pa):" << nozzlePressure() << "\n\n";
+
   
 
   }
