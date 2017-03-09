@@ -16,14 +16,16 @@ double orificeArea() {
   return 0;
 }
 
+//pascals
 double pressureDrop() {
-  return 0;
+  return 689475.729;
 }
 
+//arbitrary
 double dischargeCoefficient() {
-  return 0;
+  return 1.7;
 }
 
 double injectionVelocity() {
-  return 0;
+  return dischargeCoefficient() * pow ( 2*32.2*pressureDrop()*0.02088547/propellentDensity(),0.5);
 }
