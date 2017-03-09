@@ -5,6 +5,8 @@
 #include "chamber.h"
 #include "exit.h"
 #include "thrust.h"
+#include "coolant.h"
+#include "injector.h"
 using namespace std;
 double ChamberDiameter, ChamberPressure;
 
@@ -28,4 +30,12 @@ int main(int argc, char *argv[]) {
   cout << "\n";
 
   thrustCall();
+  
+  cout << "\n";
+
+  coolantCall();
+
+  cout << "\n";
+
+  injectorCall();
 }
