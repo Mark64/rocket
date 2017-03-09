@@ -45,7 +45,8 @@ double exitGasTemperature() {
 
 // returns the pressure at the exit in Pascals
 double exitPressure() {
-  return 101325;
+  return nozzleThroatPressure()*pow((1 + pow(exitMach(),2)*(gamma()-1)/2)
+    ,(-gamma()/(gamma()-1))) ;
 }
 
 // returns the ratio between exit cross-sectional area and nozzle throat cross-sectional area
