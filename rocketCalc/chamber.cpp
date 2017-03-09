@@ -12,23 +12,23 @@ void chamberCall() {
   cout << "gamma:" << gamma()  << "\n";
   cout << "ratio:" << mixtureRatio() << "\n\n";
   
-  cout << "convergentChamberAngle(deg):" << convergentChamberAngle()  << "\n";
-  cout << "divergentChamberAngle(deg):" << divergentChamberAngle()  << "\n\n";
+  cout << "Convergent Chamber Angle(deg):" << convergentChamberAngle()  << "\n";
+  cout << "Divergent Chamber Angle(deg):" << divergentChamberAngle()  << "\n\n";
   
-  cout << "chamberCrossArea(m^2):" << chamberCrossArea()   << "\n";
-  cout << "chamberDiameter(m):" << chamberDiameter()  << "\n";
-  cout << "chamberPressure(Pa):" << chamberPressure() << "\n";
-  cout << "chamberTemperature(K):" << chamberTemperature()<< "\n";
-  cout << "chamberVolume(m^3):" << chamberVolume() << "\n";
-  cout << "chamberVolume(L):" << chamberVolumeL() << "\n";
-  cout << "chamberThickness(m):" << chamberThickness() << "\n";
-  cout << "chamberLength(m):" << chamberLength() << "\n";
+  cout << "Chamber Cross Area(m^2):" << chamberCrossArea()   << "\n";
+  cout << "Chamber Diameter(m):" << chamberDiameter()  << "\n";
+  cout << "Chamber Pressure(Pa):" << chamberPressure() << "\n";
+  cout << "Chamber Temperature(K):" << chamberTemperature()<< "\n";
+  cout << "Chamber Volume(m^3):" << chamberVolume() << "\n";
+  cout << "Chamber Volume(L):" << chamberVolumeL() << "\n";
+  cout << "Chamber Thickness(m):" << chamberThickness() << "\n";
+  cout << "Chamber Length(m):" << chamberLength() << "\n";
   cout << "Contraction Ratio:" << contractionRatio() << "\n\n";
 
-  cout << "nozzleThroatCrossArea(m^2):" << nozzleThroatCrossArea()  << "\n";
-  cout << "nozzleThroatDiameter(m):" << nozzleThroatDiameter()  << "\n";
-  cout << "nozzleTemperature(K):" << nozzleTemperature()  << "\n";
-  cout << "nozzlePressure(Pa):" << nozzlePressure() << "\n\n";
+  cout << "Nozzle Throat Cross Area(m^2):" << nozzleThroatCrossArea()  << "\n";
+  cout << "Nozzle Throat Diameter(m):" << nozzleThroatDiameter()  << "\n";
+  cout << "Nozzle Temperature(K):" << nozzleTemperature()  << "\n";
+  cout << "Nozzle Pressure(Pa):" << nozzlePressure() << "\n\n";
 
 
   }
