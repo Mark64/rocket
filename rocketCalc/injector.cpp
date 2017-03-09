@@ -13,7 +13,7 @@ void injectorCall () {
 }
 
 double orificeArea() {
-  return 0;
+  return propellentWeightFlow()/(dischargeCoefficient()*pow( 2*32.2*pressureDrop()*0.02088547*propellentDensity()*62.428, 0.5))*0.092903;
 }
 
 //pascals
@@ -27,5 +27,5 @@ double dischargeCoefficient() {
 }
 
 double injectionVelocity() {
-  return dischargeCoefficient() * pow ( 2*32.2*pressureDrop()*0.02088547/propellentDensity(),0.5);
+  return (dischargeCoefficient() * pow ( 2*32.2*pressureDrop()*0.02088547/(propellentDensity()*62.428),0.5)) * 0.3048 ;
 }
