@@ -4,11 +4,15 @@
 #include<iostream>
 
 
+// outputs all the variables
+void thrustCall();
+
 // returns the thrust in units of newtons
-double thrustForce(double exitVelocity, double propellentFlow);
+double thrustForce();
 
 // returns the efficiency of the thruster in units of seconds (this is specific impulse)
-double specificImpulse(double thrust, double propellentFlow);  
+double specificImpulse();  
 
-
+// returns the volume efficiency of the thruster in units of (s*kg/L)
+double impulseDensity();
 

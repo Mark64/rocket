@@ -4,6 +4,7 @@
 #include "propellentFlow.h"
 #include "chamber.h"
 #include "exit.h"
+#include "thrust.h"
 using namespace std;
 double ChamberDiameter, ChamberPressure;
 
@@ -23,4 +24,8 @@ int main(int argc, char *argv[]) {
   cout << "\n";
 
   exitCall();
+
+  cout << "\n";
+
+  thrustCall();
 }
