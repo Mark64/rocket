@@ -7,9 +7,9 @@
 using namespace std;
 
 void thrustCall() {
-  cout << "Thrust Force (N):" << thrustForce() << "\n";
-  cout << "Specific Impulse (s):" << specificImpulse() << "\n";
-  cout << "Impulse Density (s*kg/L):" << impulseDensity() << "\n\n";
+  cout << "Thrust Force: " << thrustForce() << " N\n";
+  cout << "Specific Impulse: " << specificImpulse() << " s\n";
+  cout << "Impulse Density: " << impulseDensity() << " s*kg/L\n\n";
 }
 
 double thrustForce() {

@@ -16,27 +16,27 @@ void propellentFlowCall(){
   //ChamberPressure = strtod(argv[2],NULL);
 
 
-  cout << "Fuel Mass Flow (kg per s):" << fuelMassFlow() << "\n";
+  cout << "Fuel Mass Flow: " << fuelMassFlow() << " kg/s\n";
 
-  cout << "Fuel Weight Flow (lb per s):" << fuelWeightFlow() << "\n";
+  cout << "Fuel Weight Flow: " << fuelWeightFlow() << " lb/s\n";
 
-  cout << "Fuel Volume Flow (liter per s):" << fuelVolumeFlow() << "\n\n";
+  cout << "Fuel Volume Flow: " << fuelVolumeFlow() << " L/s\n\n";
 
-  cout << "Oxidizer Mass Flow (kg per s):" << oxidizerMassFlow() << "\n";
+  cout << "Oxidizer Mass Flow: " << oxidizerMassFlow() << " kg/s\n";
 
-  cout << "Oxidizier Weight Flow (lb per s):" << oxidizerWeightFlow() << "\n";
+  cout << "Oxidizier Weight Flow: " << oxidizerWeightFlow() << " lb/s\n";
 
-  cout << "Oxidizer Volume Flow (liter per s):" << oxidizerVolumeFlow() << "\n\n";
+  cout << "Oxidizer Volume Flow: " << oxidizerVolumeFlow() << " L/s\n\n";
 
-  cout << "Propellent Mass Flow (kg per s):" << propellentMassFlow() << "\n";
+  cout << "Propellent Mass Flow: " << propellentMassFlow() << " kg/s\n";
 
-  cout << "Propellent Weight Flow (lb per s):" << propellentWeightFlow() << "\n";
+  cout << "Propellent Weight Flow: " << propellentWeightFlow() << " lb/s\n";
 
-  cout << "Propellent Volume Flow (liter per s):" << propellentVolumeFlow() << "\n";
+  cout << "Propellent Volume Flow: " << propellentVolumeFlow() << " L/s\n";
 
-  cout << "Propellent Density (kg per liter):" << propellentDensity() << "\n";
+  cout << "Propellent Density: " << propellentDensity() << " kg/s\n";
 
-  cout << "Propellent Molecular Weight (g per mole):" << propellentMolecularWeight() << "\n";
+  cout << "Propellent Molecular Weight: " << propellentMolecularWeight() << " g/mol\n";
 
 
   
