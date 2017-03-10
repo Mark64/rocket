@@ -1,5 +1,7 @@
 #include "chamber.h"
 #include "parameters.h"
+#include "thrust.h"
+#include "propellentFlow.h"
 #include <iostream>
 #include <stdlib.h>
 #include <cmath>
@@ -45,7 +47,7 @@ double divergentChamberAngle() {
 }
 
 double nozzleThroatCrossArea() {
-  return chamberCrossArea()/3;
+  return (propellentWeightFlow()/ChamberPressure)*pow(((1545.32/propellentMolecularWeight())*nozzleTemperature()*1.8)/(gamma()*32.2),0.5);
 }
 
 double nozzleThroatDiameter() {
@@ -61,7 +63,7 @@ double chamberDiameter() {
 }
 
 double chamberVolume() {
-  return chamberLength()*nozzleThroatCrossArea();
+  return 89*nozzleThroatCrossArea();
 }
 
 double chamberVolumeL() {
@@ -73,8 +75,7 @@ double chamberThickness() {
 }
 
 double chamberLength() {
-  return exp( 0.0029 * log( nozzleThroatDiameter() * 100.0 ) * log(nozzleThroatDiameter() * 100.0 ) + 0.47 * log (nozzleThroatDiameter() * 100.0 ) + 1.94 )/100;
-  // return chamberVolume()/(1.1*chamberCrossArea());
+  return chamberVolume()/(1.1*chamberCrossArea());
 }
 
 double contractionRatio() {
@@ -95,13 +96,22 @@ double chamberPressure() {
 } 
 
 double chamberTemperature() {
-  return 2.321*pow(10,-8)*pow(ChamberPressure,3) - 1.955*pow(10,-4)*pow(ChamberPressure,2) + 0.575*ChamberPressure + 3027.817;
+
+  double result = 0;
+  if (ChamberPressure < 301) {
+    result = 3445.372;
+  }
+  else {
+    result = 3512.039;
+  }
+
+  return result;
 }
 
 double gamma() {
- return -6.988*pow(10,-13)*pow(ChamberPressure,3) + 6.032*pow(10,-9)*pow(ChamberPressure,2) - 1.823*pow(10,-5)*(ChamberPressure)+ 1.215; 
+ return 1.2; 
 }
 
 double mixtureRatio() {
-  return 1.06*pow(10,-10)*pow((ChamberPressure),3) - 8.566*pow(10,-7)*pow(ChamberPressure, 2) + 2.224*pow(10,-3)*(ChamberPressure) + 4.151;
+  return 2.5;
 }

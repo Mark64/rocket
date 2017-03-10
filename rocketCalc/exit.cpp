@@ -19,7 +19,12 @@ void exitCall() {
 
 // returns the area of the exit space for the thruster exhaust in units of meters^2
 double exitArea() {
-  return (nozzleThroatCrossArea()/exitMach() ) * pow ( (1+exitMach()*exitMach()*(gamma()-1)/2)/((gamma()+1)/2), (gamma()+1)/(2*gamma()-2));
+  double result = 0;
+  if (ChamberPressure < 301)
+    result = nozzleThroatCrossArea()*3.65;
+  if (ChamberPressure > 301) 
+    result = nozzleThroatCrossArea()*5.28;
+  return result;
 }
 
 // returns the diameter of the exit in units of meters
@@ -29,23 +34,32 @@ double exitDiameter() {
 
 // returns the mach number of the exhaust at the exit
 double exitMach() {
-  return pow( ( 2 / ( gamma() - 1 ) ) * pow ( ChamberPressure / 14.70 , ( gamma() - 1 )
-  / gamma() ) - 1, 0.5 );
+  double result = 0;
+  if (ChamberPressure < 301)
+    result = 2.55;
+  if (ChamberPressure > 301)
+    result = 2.83;
+  return result;
 }
 
 // returns the velocity of the exiting gas in units of meters/second
 double exitGasVelocity() {
-  return exitMach() * pow(gamma()*8.31446*exitGasTemperature(),0.5);
+  return exitMach() * 343;
 }
 
 // returns the mean temperature for the exiting exhaust in degrees kelvin
 double exitGasTemperature() {
-    return chamberTemperature()*( 1 / ( 1 + exitMach()*exitMach()*( gamma() - 1) / 2 ) );
+  double result = 0;
+  if (ChamberPressure < 301) 
+    result = 0.606*chamberTemperature();
+  if (ChamberPressure > 301)
+    result = 0.55*chamberTemperature();
+    return result;
 }
 
 // returns the pressure at the exit in Pascals
 double exitPressure() {
-  return 6894.75729*(ChamberPressure*pow((1 + exitMach()*exitMach()*(gamma() - 1) / 2 ), -1 * gamma()/(gamma()-1)));
+  return 101325;
 
 }
 

@@ -4,6 +4,7 @@
 #include "propellentFlow.h"
 #include "exit.h"
 #include "thrust.h"
+#include "parameters.h"
 using namespace std;
 
 void thrustCall() {
@@ -13,11 +14,16 @@ void thrustCall() {
 }
 
 double thrustForce() {
-  return specificImpulse()*propellentWeightFlow();
+  return Thrust;
 }
 
 double specificImpulse() {
-  return exitGasVelocity()/9.8125;
+  double result = 0;
+  if (ChamberPressure < 301) 
+    result = 261;
+  if (ChamberPressure > 301) 
+    result = 279;
+  return result;
 }
 
 double impulseDensity() {

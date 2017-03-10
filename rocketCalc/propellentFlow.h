@@ -38,3 +38,6 @@ double propellentDensity();
 
 // returns the average molecular weight of propellent in units of g per
 double propellentMolecularWeight();
+
+
+double propellentGasConstant();

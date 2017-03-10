@@ -8,12 +8,13 @@
 #include "coolant.h"
 #include "injector.h"
 using namespace std;
-double ChamberDiameter, ChamberPressure;
+double ChamberPressure, Thrust, ChamberDiameter;
 
 int main(int argc, char *argv[]) {
 
-  ChamberDiameter = strtod(argv[1],NULL);
+  Thrust = strtod(argv[1],NULL);
   ChamberPressure = strtod(argv[2],NULL);
+  ChamberDiameter = strtod(argv[3],NULL);
 
   cout << "\n";
 

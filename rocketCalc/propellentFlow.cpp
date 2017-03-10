@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include "parameters.h"
 #include "chamber.h"
+#include "thrust.h"
 using namespace std;
 
 
@@ -38,7 +39,7 @@ void propellentFlowCall(){
 
   cout << "Propellent Molecular Weight: " << propellentMolecularWeight() << " g/mol\n";
 
-
+  cout << "Propellent Gas Constant: " << propellentGasConstant() << "\n";
   
 }
 
@@ -51,7 +52,7 @@ double fuelWeightFlow() {
 }
 
 double fuelVolumeFlow() {
-  return fuelMassFlow()/0.0071;
+  return fuelMassFlow()/0.71;
 }
 
 double oxidizerMassFlow() {
@@ -63,7 +64,7 @@ double oxidizerWeightFlow() {
 }
 
 double oxidizerVolumeFlow() {
-  return oxidizerMassFlow()/1.141;
+  return oxidizerMassFlow()/0.001331;
 }
 
 double propellentMassFlow() {
@@ -71,7 +72,7 @@ double propellentMassFlow() {
 }
 
 double propellentWeightFlow() {
-  return (nozzleThroatCrossArea()*1550)*(nozzlePressure()*0.000145038)/pow((65*(nozzleTemperature()*1.8/(32.2*gamma()))),0.5);
+  return Thrust/specificImpulse();
 }
 
 double propellentVolumeFlow() {
@@ -83,8 +84,13 @@ double propellentDensity() {
   return 0.001 * ( nozzlePressure() * propellentMolecularWeight() ) / ( nozzleTemperature() * 8.3144621 );
 }
 
-
+//assuming fuel-rich 
 double propellentMolecularWeight() {
-  return -2.89*pow(10,-14)*pow(ChamberPressure,4) + 3.94*pow(10,-10)*pow(ChamberPressure,3) - 1.962*pow(10,-6)*pow(ChamberPressure,2) + 4.228*pow(10,-3)*ChamberPressure + 10.23;
+  return 22.714;
 }
+
+double propellentGasConstant() {
+  return 0.60524;
+}
+
 

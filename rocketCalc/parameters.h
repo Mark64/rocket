@@ -2,5 +2,7 @@
 
 //psi
 extern double ChamberPressure;
-//meters
+//lb
+extern double Thrust;
+//m
 extern double ChamberDiameter;
