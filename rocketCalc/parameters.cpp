@@ -7,6 +7,7 @@
 #include "thrust.h"
 #include "coolant.h"
 #include "injector.h"
+#include "symboliccpp/symbolicc++.h"
 using namespace std;
 double ChamberDiameter, ChamberPressure;
 
