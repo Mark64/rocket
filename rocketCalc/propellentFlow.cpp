@@ -64,7 +64,7 @@ double oxidizerWeightFlow() {
 }
 
 double oxidizerVolumeFlow() {
-  return oxidizerMassFlow()/0.001331;
+  return oxidizerMassFlow()/0.001429;
 }
 
 double propellentMassFlow() {
@@ -84,13 +84,14 @@ double propellentDensity() {
   return 0.001 * ( nozzlePressure() * propellentMolecularWeight() ) / ( nozzleTemperature() * 8.3144621 );
 }
 
-//assuming fuel-rich 
+//assuming fuel-rich
+//Molecular weight g/mol 
 double propellentMolecularWeight() {
   return 22.714;
 }
 
 double propellentGasConstant() {
-  return 0.60524;
+  return 366.029;
 }
 
 

@@ -44,7 +44,7 @@ double exitMach() {
 
 // returns the velocity of the exiting gas in units of meters/second
 double exitGasVelocity() {
-  return exitMach() * 343;
+  return exitMach() * pow(exitGasTemperature()*gamma()*8.314/(propellentMolecularWeight()/1000),0.5);
 }
 
 // returns the mean temperature for the exiting exhaust in degrees kelvin
