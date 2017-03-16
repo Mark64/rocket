@@ -1,0 +1,36 @@
+In order to build the project, run 
+$ make 
+which is actually running "make all" as you can see from the Makefile
+
+This will build the project and place the compiled binaries in the ./build folder
+
+cmake is a great program for generating a cross platform build environment.  To configure it, you use config files called "CMakeLists.txt".  You should take a look at the one in the main directory (the one with at least 2 lines).  
+
+There are many ways to configure CMakeLists.txt files for projects, 
+but the way I have done it is the way I saw on a stack overflow post, 
+and its similar to the way Maurice does configures the irvine-01-sw project.  
+Each folder has a CMakeLists.txt file which adds the executables (.cpp, 
+not .h) to a 'library'. It's not exactly a library, but doing so gives you
+some cool advantages with compilation.  For one, if you include files from
+other folders and those files reference other folders, normally, you would
+have to compile source code multiple times. However, by building each 
+folder as a library, each folder only need be compiled once and the 
+compiler will then link the code in the folder as a static libary 
+(you can configure it to make them shared or dynamic libraries, but
+there's really no point in doing so since its a libary only in the eyes 
+of the compiler), which allows you to reduce compile time.  Plus, it makes
+CMakeLists.txt files way easier to write
+
+There's no need to directly reference cmake at all, the top level Makefile 
+takes care of that.
+
+I recommend you look at the CMakeLists.txt files in the project folder and the 
+rocket calc folder so that you can see how it's done.  You'll need to in order 
+to make sure your new code gets added and compiled to the project binary
+
+
+
+
+
+
+
